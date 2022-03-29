@@ -19,7 +19,7 @@ function App() {
         <Route path='Menu' element={<Menu/>}>  </Route>
 <Route path='About' element={<About/>}> </Route>
 <Route path='Home' element={<Home/>}> </Route>
-<Route path='/friend/friendId' element ={<FriendDeteles> </FriendDeteles>}></Route>
+<Route path="/friend/:friendId" element={<FriendDeteles></FriendDeteles>}></Route>
 <Route path='Freinds' element={<Freinds></Freinds>}> </Route>
 
 <Route path='*' element={<NotFind></NotFind>}> </Route>

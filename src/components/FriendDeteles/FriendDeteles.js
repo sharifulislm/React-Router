@@ -1,29 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-const FriendDeteles = () => {
+const FriendDeteles = () =>  {
     const {friendId} = useParams();
-    console.log(friendId)
-   const [friend , setfriend]= useState();
+    const [friend, setFriend] = useState({});
 
+    useEffect( ()=>{
+        const url = `https://jsonplaceholder.typicode.com/users/${friendId}`;
+        console.log(url);
+        
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setFriend(data));
+    }, [])
 
-   useEffect(() => {
-       const url = `https://jsonplaceholder.typicode.com/users/${friendId}`;
-       console.log(url);
-       fetch(url)
-       .then(res => res.json())
-       .then(data => setfriend(data));
-
-   } ,[])
- 
- 
- 
     return (
         <div>
-         <h2>   this is detail about bondhu : {friendId} </h2>
-            
+            <h2>This is Detail about Dosto: {friendId} </h2>
+            <h3>Name: {friend.name}</h3>
+            <h4>Email: {friend.email}</h4>
+            <h6>Website: {friend.website}</h6>
+            <p><small>city: {friend.address?.city}</small></p>
+            <p><small>Lat: {friend.address?.geo?.lat}</small></p>
         </div>
     );
 };
-
 export default FriendDeteles;
