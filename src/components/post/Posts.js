@@ -10,7 +10,7 @@ const Posts = () => {
     }, [])
     return (
         <div>
-            <h2>Every posts Facebook ever had: {posts.length}</h2>
+            <h2>useing nested-routes: {posts.length}</h2>
             {
                 posts.map(post => <Link 
                     key={post.id}
