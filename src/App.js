@@ -8,6 +8,8 @@ import NotFind from './components/NotFind/NotFind';
 import Freinds from './components/Friends/Freinds';
 import Header from './components/Header/Header';
 import FriendDeteles from './components/FriendDeteles/FriendDeteles';
+import Posts from './components/post/Posts';
+import PostDetail from './components/postdetals/PostDetail';
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
 <Route path='Home' element={<Home/>}> </Route>
 <Route path="/friend/:friendId" element={<FriendDeteles></FriendDeteles>}></Route>
 <Route path='Freinds' element={<Freinds></Freinds>}> </Route>
+<Route path="/posts" element={<Posts></Posts>}>
+          <Route path=':postId' element={<PostDetail></PostDetail>}></Route>
+        </Route>
 
 <Route path='*' element={<NotFind></NotFind>}> </Route>
 
